@@ -1,0 +1,14 @@
+{
+    "cross-space-db-grantor": {
+        "object_owner": {
+            "container_roles": [
+                "external_access_g#"
+            ]
+        },
+        "application_user": {
+            "container_roles": [
+                "external_access"
+            ]
+        }
+    }
+}

@@ -1,0 +1,27 @@
+_schema-version: "2.1"
+ID: cross-space-target-db
+version: 0.0.1
+modules:
+- name: cross-space-target-db-deployer
+  type: hdb
+  path: db
+  requires:
+  - name: cross-space-target-hdi
+    properties:
+      TARGET_CONTAINER: ~{hdi-container-name}
+  - name: cross-space-db
+    group: SERVICE_REPLACEMENTS
+    properties:
+      key: cross-space-db-grantor
+      service: ~{cross-schema-ups}
+resources:
+- name: cross-space-target-hdi
+  type: com.sap.xs.hdi-container
+  properties:
+    hdi-container-name: ${service-name}
+- name: cross-space-db
+  type: org.cloudfoundry.existing-service
+  parameters:
+    service-name: cross-space-db   
+  properties:
+    cross-schema-ups: ${service-name}

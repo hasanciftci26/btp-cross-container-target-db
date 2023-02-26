@@ -1,0 +1,8 @@
+{
+    "PERSONNELS": {
+        "target": {
+            "object": "PERSONNELS",
+            "schema.configure": "cross-space-db-grantor/schema"
+        }
+    }
+}
